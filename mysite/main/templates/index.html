@@ -1,0 +1,21 @@
+<h1>Available Main</h1>
+
+{% if message %}
+    <p><strong>{{ message }}</strong></p>
+{% endif %}
+
+{% if latest_main %}
+
+    <ul>
+        {% for main in latest_main %}
+            <li>
+                <a href="/main/{{ main.id }}/">
+                    {{ main.main_text }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No main are available right now.</p>
+{% endif %}
